@@ -21,12 +21,9 @@ const db = mysql.createConnection(
 );
 
 
-
-// app.get('/', (req, res) => {
-//     res.json({ 
-//         message: 'Hello World!'
-//     });
-// });
+db.query(`SELECT * FROM candidates`, (err, rows) => {
+    console.log(rows);
+})
 
 // Default response for any other request (NOT FOUND) - Needs to be here or will override other functions
 app.use((req, res) => {
